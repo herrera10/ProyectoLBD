@@ -47,16 +47,82 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmClientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmClientes.Designer.cs">
+      <DependentUpon>FrmClientes.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmEmpleado.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FrmEmpleado.Designer.cs">
       <DependentUpon>FrmEmpleado.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmFuncion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmFuncion.Designer.cs">
+      <DependentUpon>FrmFuncion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMenu.Designer.cs">
+      <DependentUpon>FrmMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmMenuPrincipal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMenuPrincipal.designer.cs">
+      <DependentUpon>frmMenuPrincipal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmPelicula.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmPelicula.Designer.cs">
+      <DependentUpon>FrmPelicula.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmProyeccion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmProyeccion.Designer.cs">
+      <DependentUpon>FrmProyeccion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmReserva.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmReserva.Designer.cs">
+      <DependentUpon>FrmReserva.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmSala.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmSala.Designer.cs">
+      <DependentUpon>FrmSala.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmSucursal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmSucursal.Designer.cs">
+      <DependentUpon>FrmSucursal.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FrmEmpleado.resx">
       <DependentUpon>FrmEmpleado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmMenu.resx">
+      <DependentUpon>FrmMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMenuPrincipal.resx">
+      <DependentUpon>frmMenuPrincipal.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

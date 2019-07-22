@@ -22,3 +22,5 @@ C:\Users\Admin\Documents\GitHub\ProyectoLBD2\ProyectoLBD\bin\Debug\ProyectoLBD.p
 C:\Users\Admin\Documents\GitHub\ProyectoLBD2\ProyectoLBD\bin\Debug\Oracle.ManagedDataAccess.dll
 C:\Users\Admin\Documents\GitHub\ProyectoLBD2\ProyectoLBD\obj\Debug\ProyectoLBD.csproj.CopyComplete
 C:\Users\Admin\Documents\GitHub\ProyectoLBD2\ProyectoLBD\obj\Debug\ProyectoLBD.FrmEmpleado.resources
+C:\Users\Admin\Documents\GitHub\ProyectoLBD2\ProyectoLBD\obj\Debug\ProyectoLBD.FrmMenu.resources
+C:\Users\Admin\Documents\GitHub\ProyectoLBD2\ProyectoLBD\obj\Debug\ProyectoLBD.FrmMenuPrincipal.resources

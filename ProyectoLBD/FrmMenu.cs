@@ -16,5 +16,10 @@ namespace ProyectoLBD
         {
             InitializeComponent();
         }
+
+        private void FrmMenu_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
