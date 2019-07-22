@@ -24,3 +24,4 @@ C:\Users\Admin\Documents\GitHub\ProyectoLBD2\ProyectoLBD\obj\Debug\ProyectoLBD.c
 C:\Users\Admin\Documents\GitHub\ProyectoLBD2\ProyectoLBD\obj\Debug\ProyectoLBD.FrmEmpleado.resources
 C:\Users\Admin\Documents\GitHub\ProyectoLBD2\ProyectoLBD\obj\Debug\ProyectoLBD.FrmMenu.resources
 C:\Users\Admin\Documents\GitHub\ProyectoLBD2\ProyectoLBD\obj\Debug\ProyectoLBD.FrmMenuPrincipal.resources
+C:\Users\Admin\Documents\GitHub\ProyectoLBD2\ProyectoLBD\obj\Debug\ProyectoLBD.FrmPelicula.resources

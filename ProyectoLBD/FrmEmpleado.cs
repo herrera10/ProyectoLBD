@@ -18,7 +18,7 @@ namespace ProyectoLBD
 {
     public partial class FrmEmpleado : Form
     {
-        string conString = "User Id=hr;Password=hr;Data Source=localhost:1521/xe;";
+        string conString = "User Id=Administrador;Password=admin;Data Source=localhost:1521/xe;";
 
 
         public FrmEmpleado()
@@ -33,7 +33,7 @@ namespace ProyectoLBD
             con.ConnectionString = conString;
             con.Open();
 
-            string sql = "select  employee_id,first_name,last_name,job_id,salary,hire_date from employees ";
+            string sql = "SELECT EM_IDEMPLEADO,EM_NOMBRE,EM_APELLIDO1,EM_APELLIDO2,EM_TELEFONO,EM_DIRECCION,EM_SALARIO FROM EMPLEADO ";
             OracleCommand cmd = new OracleCommand(sql, con);
             using (OracleDataReader reader = cmd.ExecuteReader())
             {
@@ -45,8 +45,31 @@ namespace ProyectoLBD
 
         private void dgvEmpleados_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            try
+            {
+                if (e.RowIndex >= 0)
+                {
+                    DataGridViewRow row = this.dgvEmpleados.Rows[e.RowIndex];
+                    txtEmpleadoId.Text = row.Cells["EM_IDEMPLEADO"].Value.ToString();
+                    txtNombre.Text = row.Cells["EM_NOMBRE"].Value.ToString();
+                    txtApellido1.Text = row.Cells["EM_APELLIDO1"].Value.ToString();
+                    txtApellido2.Text = row.Cells["EM_APELLIDO2"].Value.ToString();
+                    txtTelefono.Text = row.Cells["EM_TELEFONO"].Value.ToString();
+                    txtSalario.Text = row.Cells["EM_SALARIO"].Value.ToString();
+                    txtDireccion.Text = row.Cells["EM_DIRECCION"].Value.ToString();
+                    //dTPFecha.Value = DateTime.Parse(row.Cells["HIRE_DATE"].Value.ToString());
 
-          
+                    btnAgregar.Enabled = false;
+                    btnActualizar.Enabled = true;
+                    btnEliminar.Enabled = true;
+                }
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show("" + ex);
+            }
+
 
         }
 
@@ -71,22 +94,22 @@ namespace ProyectoLBD
             {
                 case 0:
                     msg = "Fila insertada exitosamente";
-                    cmd.Parameters.Add("EMPLOYEE_ID", OracleDbType.Int32, 6).Value = txtEmployeeID.Text;
+                    cmd.Parameters.Add("EMPLOYEE_ID", OracleDbType.Int32, 6).Value = txtEmpleadoId.Text;
                     cmd.Parameters.Add("FIRST_NAME", OracleDbType.Varchar2, 25).Value = txtNombre.Text;
-                    cmd.Parameters.Add("LAST_NAME", OracleDbType.Varchar2, 25).Value = txtApellido.Text;
-                    cmd.Parameters.Add("JOB_ID", OracleDbType.Varchar2, 25).Value = txtPuesto.Text;
-                    cmd.Parameters.Add("SALARY", OracleDbType.Int32, 25).Value = txtSalary.Text;
-                    cmd.Parameters.Add("HIRE_DATE", OracleDbType.Date, 7).Value = dTPFecha.Value;
+                    cmd.Parameters.Add("LAST_NAME", OracleDbType.Varchar2, 25).Value = txtApellido1.Text;
+                    cmd.Parameters.Add("JOB_ID", OracleDbType.Varchar2, 25).Value = txtApellido2.Text;
+                    cmd.Parameters.Add("SALARY", OracleDbType.Int32, 25).Value = txtTelefono.Text;
+                   // cmd.Parameters.Add("HIRE_DATE", OracleDbType.Date, 7).Value = dTPFecha.Value;
                     break;
 
                 case 1:
                     msg = "Fila actualizada exitosamente";
 
                     cmd.Parameters.Add("FIRST_NAME", OracleDbType.Varchar2, 25).Value = txtNombre.Text;
-                    cmd.Parameters.Add("LAST_NAME", OracleDbType.Varchar2, 25).Value = txtApellido.Text;
-                    cmd.Parameters.Add("SALARY", OracleDbType.Int32, 25).Value = txtSalary.Text;
+                    cmd.Parameters.Add("LAST_NAME", OracleDbType.Varchar2, 25).Value = txtApellido1.Text;
+                    cmd.Parameters.Add("SALARY", OracleDbType.Int32, 25).Value = txtTelefono.Text;
                     //cmd.Parameters.Add("HIRE_DATE", OracleDbType.Date, 7).Value = dTPFecha.Value;
-                    cmd.Parameters.Add("EMPLOYEE_ID", OracleDbType.Int32, 6).Value = txtEmployeeID.Text;
+                    cmd.Parameters.Add("EMPLOYEE_ID", OracleDbType.Int32, 6).Value = txtEmpleadoId.Text;
 
 
 
@@ -95,7 +118,7 @@ namespace ProyectoLBD
                 case 2:
                     msg = "Fila borrada exitosamente";
 
-                    cmd.Parameters.Add("EMPLOYEE_ID", OracleDbType.Int32, 6).Value = txtEmployeeID.Text;
+                    cmd.Parameters.Add("EMPLOYEE_ID", OracleDbType.Int32, 6).Value = txtEmpleadoId.Text;
                     break;
             }
             try
@@ -134,12 +157,12 @@ namespace ProyectoLBD
                 if (e.RowIndex >= 0)
                 {
                     DataGridViewRow row = this.dgvEmpleados.Rows[e.RowIndex];
-                    txtEmployeeID.Text = row.Cells["EMPLOYEE_ID"].Value.ToString();
-                    txtNombre.Text = row.Cells["FIRST_NAME"].Value.ToString();
-                    txtApellido.Text = row.Cells["LAST_NAME"].Value.ToString();
-                    txtPuesto.Text = row.Cells["JOB_ID"].Value.ToString();
-                    txtSalary.Text = row.Cells["SALARY"].Value.ToString();
-                    dTPFecha.Value = DateTime.Parse(row.Cells["HIRE_DATE"].Value.ToString());
+                    txtEmpleadoId.Text = row.Cells["EM_IDEMPLEADO"].Value.ToString();
+                    txtNombre.Text = row.Cells["EM_NOMBRE"].Value.ToString();
+                    txtApellido1.Text = row.Cells["EM_APELLIDO1"].Value.ToString();
+                    txtApellido2.Text = row.Cells["EM_APELLIDO2"].Value.ToString();
+                    txtTelefono.Text = row.Cells["EM_TELEFONO"].Value.ToString();
+                    //dTPFecha.Value = DateTime.Parse(row.Cells["HIRE_DATE"].Value.ToString());
 
                     btnAgregar.Enabled = false;
                     btnActualizar.Enabled = true;
@@ -171,11 +194,11 @@ namespace ProyectoLBD
 
         private void resetALL()
         {
-            txtEmployeeID.Text = "";
+            txtEmpleadoId.Text = "";
             txtNombre.Text = "";
-            txtApellido.Text = "";
-            txtPuesto.Text = "";
-            txtSalary.Text = "";
+            txtApellido1.Text = "";
+            txtApellido2.Text = "";
+            txtTelefono.Text = "";
            // dTPFecha = null;
 
             btnAgregar.Enabled = true;
@@ -186,6 +209,11 @@ namespace ProyectoLBD
         private void btnResetear_Click(object sender, EventArgs e)
         {
             this.resetALL();
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
