@@ -10,3 +10,15 @@ C:\Users\randa\source\repos\ProyectoLBD\ProyectoLBD\obj\Debug\ProyectoLBD.csproj
 C:\Users\randa\source\repos\ProyectoLBD\ProyectoLBD\obj\Debug\ProyectoLBD.csproj.CopyComplete
 C:\Users\randa\source\repos\ProyectoLBD\ProyectoLBD\obj\Debug\ProyectoLBD.exe
 C:\Users\randa\source\repos\ProyectoLBD\ProyectoLBD\obj\Debug\ProyectoLBD.pdb
+C:\Users\Admin\Documents\GitHub\ProyectoLBD2\ProyectoLBD\obj\Debug\ProyectoLBD.csprojAssemblyReference.cache
+C:\Users\Admin\Documents\GitHub\ProyectoLBD2\ProyectoLBD\obj\Debug\ProyectoLBD.Properties.Resources.resources
+C:\Users\Admin\Documents\GitHub\ProyectoLBD2\ProyectoLBD\obj\Debug\ProyectoLBD.csproj.GenerateResource.cache
+C:\Users\Admin\Documents\GitHub\ProyectoLBD2\ProyectoLBD\obj\Debug\ProyectoLBD.csproj.CoreCompileInputs.cache
+C:\Users\Admin\Documents\GitHub\ProyectoLBD2\ProyectoLBD\obj\Debug\ProyectoLBD.exe
+C:\Users\Admin\Documents\GitHub\ProyectoLBD2\ProyectoLBD\obj\Debug\ProyectoLBD.pdb
+C:\Users\Admin\Documents\GitHub\ProyectoLBD2\ProyectoLBD\bin\Debug\ProyectoLBD.exe.config
+C:\Users\Admin\Documents\GitHub\ProyectoLBD2\ProyectoLBD\bin\Debug\ProyectoLBD.exe
+C:\Users\Admin\Documents\GitHub\ProyectoLBD2\ProyectoLBD\bin\Debug\ProyectoLBD.pdb
+C:\Users\Admin\Documents\GitHub\ProyectoLBD2\ProyectoLBD\bin\Debug\Oracle.ManagedDataAccess.dll
+C:\Users\Admin\Documents\GitHub\ProyectoLBD2\ProyectoLBD\obj\Debug\ProyectoLBD.csproj.CopyComplete
+C:\Users\Admin\Documents\GitHub\ProyectoLBD2\ProyectoLBD\obj\Debug\ProyectoLBD.FrmEmpleado.resources
