@@ -40,7 +40,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.txtPelicula = new System.Windows.Forms.TextBox();
+            this.txtIdPelicula = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPeliculas)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -60,9 +60,11 @@
             this.dgvPeliculas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvPeliculas.Location = new System.Drawing.Point(74, 206);
             this.dgvPeliculas.Name = "dgvPeliculas";
+            this.dgvPeliculas.RowHeadersVisible = false;
             this.dgvPeliculas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvPeliculas.Size = new System.Drawing.Size(522, 283);
             this.dgvPeliculas.TabIndex = 15;
+            this.dgvPeliculas.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPeliculas_CellClick);
             this.dgvPeliculas.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPeliculas_CellContentClick);
             // 
             // groupBox1
@@ -77,7 +79,7 @@
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.txtNombre);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.txtPelicula);
+            this.groupBox1.Controls.Add(this.txtIdPelicula);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Location = new System.Drawing.Point(75, 19);
             this.groupBox1.Name = "groupBox1";
@@ -94,6 +96,7 @@
             this.btnResetear.TabIndex = 18;
             this.btnResetear.Text = "Resetear";
             this.btnResetear.UseVisualStyleBackColor = true;
+            this.btnResetear.Click += new System.EventHandler(this.btnResetear_Click);
             // 
             // btnActualizar
             // 
@@ -104,6 +107,7 @@
             this.btnActualizar.TabIndex = 17;
             this.btnActualizar.Text = "Actualizar";
             this.btnActualizar.UseVisualStyleBackColor = true;
+            this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
             // 
             // txtIdioma
             // 
@@ -130,6 +134,7 @@
             this.btnAgregar.TabIndex = 15;
             this.btnAgregar.Text = "Agregar";
             this.btnAgregar.UseVisualStyleBackColor = true;
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
             // label7
             // 
@@ -173,12 +178,12 @@
             this.label1.TabIndex = 2;
             this.label1.Text = "ID PELICULA";
             // 
-            // txtPelicula
+            // txtIdPelicula
             // 
-            this.txtPelicula.Location = new System.Drawing.Point(114, 25);
-            this.txtPelicula.Name = "txtPelicula";
-            this.txtPelicula.Size = new System.Drawing.Size(234, 20);
-            this.txtPelicula.TabIndex = 8;
+            this.txtIdPelicula.Location = new System.Drawing.Point(114, 25);
+            this.txtIdPelicula.Name = "txtIdPelicula";
+            this.txtIdPelicula.Size = new System.Drawing.Size(234, 20);
+            this.txtIdPelicula.TabIndex = 8;
             // 
             // label2
             // 
@@ -221,7 +226,7 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txtPelicula;
+        private System.Windows.Forms.TextBox txtIdPelicula;
         private System.Windows.Forms.Label label2;
     }
 }
