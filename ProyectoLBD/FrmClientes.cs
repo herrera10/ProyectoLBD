@@ -67,7 +67,7 @@ namespace ProyectoLBD
                 if (e.RowIndex >= 0)
                 {
                     DataGridViewRow row = this.dgvClientes.Rows[e.RowIndex];
-                    txtEmpleadoId.Text = row.Cells["CL_IDCLIENTE"].Value.ToString();
+                    txtClienteId.Text = row.Cells["CL_IDCLIENTE"].Value.ToString();
                     txtNombre.Text = row.Cells["CL_NOMBRE"].Value.ToString();
                     txtApellido1.Text = row.Cells["CL_APELLIDO1"].Value.ToString();
                     txtApellido2.Text = row.Cells["CL_APELLIDO2"].Value.ToString();
@@ -87,18 +87,16 @@ namespace ProyectoLBD
         private void btnEliminar_Click(object sender, EventArgs e)
         {
             OracleConnection con = new OracleConnection();
-            con.ConnectionString = conString;
-           
-
-            OracleCommand comando = new OracleCommand("borrar_cliente", con);
-            comando.CommandType = System.Data.CommandType.StoredProcedure;
-            comando.Parameters.Add("idCliente", OracleDbType.Int16).Value = txtEmpleadoId.Text;
+            con.ConnectionString = conString;        
 
             try
             {                
                 con.Open();
+                OracleCommand comando = new OracleCommand("borrar_cliente", con);
+                comando.CommandType = System.Data.CommandType.StoredProcedure;
+                comando.Parameters.Add("idCliente", OracleDbType.Int16).Value = txtClienteId.Text;
                 comando.ExecuteNonQuery();
-                MessageBox.Show("Cliente eliminado");
+                MessageBox.Show("Cliente eliminado","Eliminar");
                 updateDataGridClientes();
             }
             catch (Exception ex)
@@ -110,7 +108,75 @@ namespace ProyectoLBD
 
         }
 
-       
+        private void btnAgregar_Click(object sender, EventArgs e)
+        {
+            OracleConnection con = new OracleConnection();
+            con.ConnectionString = conString;
+            
 
+            try
+            {
+                con.Open();
+                OracleCommand comando = new OracleCommand("agregar_cliente", con);
+                comando.CommandType = System.Data.CommandType.StoredProcedure;
+                comando.Parameters.Add("idCliente", OracleDbType.Int16).Value = txtClienteId.Text;
+                comando.Parameters.Add("nombre", OracleDbType.Varchar2).Value = txtNombre.Text;
+                comando.Parameters.Add("ap1", OracleDbType.Varchar2).Value = txtApellido1.Text;
+                comando.Parameters.Add("ap2", OracleDbType.Varchar2).Value = txtApellido2.Text;
+                comando.Parameters.Add("tel", OracleDbType.Int16).Value = txtTelefono.Text;
+                comando.ExecuteNonQuery();
+                MessageBox.Show("Cliente agregado exitosamente", "Agregar");
+                updateDataGridClientes();
+            }
+            catch (Exception)
+            {
+
+                MessageBox.Show("Algo fallo","Error");
+            }
+            con.Close();
+
+
+        }
+
+        private void btnResetear_Click(object sender, EventArgs e)
+        {
+            txtClienteId.Text = "";
+            txtNombre.Text = "";
+            txtApellido1.Text = "";
+            txtApellido2.Text = "";
+            txtTelefono.Text = "";
+            btnAgregar.Enabled = true;
+            btnEliminar.Enabled = false;
+            btnActualizar.Enabled = false;
+          
+        }
+
+        private void btnActualizar_Click(object sender, EventArgs e)
+        {
+            OracleConnection con = new OracleConnection();
+            con.ConnectionString = conString;
+
+
+            try
+            {
+                con.Open();
+                OracleCommand comando = new OracleCommand("actualizar_cliente", con);
+                comando.CommandType = System.Data.CommandType.StoredProcedure;
+                comando.Parameters.Add("idCliente", OracleDbType.Int16).Value = txtClienteId.Text;
+                comando.Parameters.Add("nombre", OracleDbType.Varchar2).Value = txtNombre.Text;
+                comando.Parameters.Add("ap1", OracleDbType.Varchar2).Value = txtApellido1.Text;
+                comando.Parameters.Add("ap2", OracleDbType.Varchar2).Value = txtApellido2.Text;
+                comando.Parameters.Add("tel", OracleDbType.Int16).Value = txtTelefono.Text;
+                comando.ExecuteNonQuery();
+                MessageBox.Show("Cliente actualizado", "Actualizar");
+                updateDataGridClientes();
+            }
+            catch (Exception)
+            {
+
+                MessageBox.Show("Algo fallo", "Error");
+            }
+            con.Close();
+        }
     }
 }

@@ -42,7 +42,7 @@
             this.txtTelefono = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.txtEmpleadoId = new System.Windows.Forms.TextBox();
+            this.txtClienteId = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvClientes)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -60,6 +60,7 @@
             this.dgvClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvClientes.Location = new System.Drawing.Point(33, 210);
             this.dgvClientes.Name = "dgvClientes";
+            this.dgvClientes.RowHeadersVisible = false;
             this.dgvClientes.Size = new System.Drawing.Size(560, 228);
             this.dgvClientes.TabIndex = 0;
             this.dgvClientes.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvClientes_CellClick);
@@ -79,7 +80,7 @@
             this.groupBox1.Controls.Add(this.txtTelefono);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.txtEmpleadoId);
+            this.groupBox1.Controls.Add(this.txtClienteId);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Location = new System.Drawing.Point(21, 23);
             this.groupBox1.Name = "groupBox1";
@@ -93,9 +94,10 @@
             this.btnResetear.Location = new System.Drawing.Point(481, 125);
             this.btnResetear.Name = "btnResetear";
             this.btnResetear.Size = new System.Drawing.Size(75, 23);
-            this.btnResetear.TabIndex = 18;
+            this.btnResetear.TabIndex = 8;
             this.btnResetear.Text = "Resetear";
             this.btnResetear.UseVisualStyleBackColor = true;
+            this.btnResetear.Click += new System.EventHandler(this.btnResetear_Click);
             // 
             // btnActualizar
             // 
@@ -103,9 +105,10 @@
             this.btnActualizar.Location = new System.Drawing.Point(481, 89);
             this.btnActualizar.Name = "btnActualizar";
             this.btnActualizar.Size = new System.Drawing.Size(75, 23);
-            this.btnActualizar.TabIndex = 17;
+            this.btnActualizar.TabIndex = 7;
             this.btnActualizar.Text = "Actualizar";
             this.btnActualizar.UseVisualStyleBackColor = true;
+            this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
             // 
             // btnEliminar
             // 
@@ -113,7 +116,7 @@
             this.btnEliminar.Location = new System.Drawing.Point(481, 54);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(75, 23);
-            this.btnEliminar.TabIndex = 16;
+            this.btnEliminar.TabIndex = 6;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = true;
             this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
@@ -123,23 +126,24 @@
             this.btnAgregar.Location = new System.Drawing.Point(481, 15);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(75, 23);
-            this.btnAgregar.TabIndex = 15;
+            this.btnAgregar.TabIndex = 5;
             this.btnAgregar.Text = "Agregar";
             this.btnAgregar.UseVisualStyleBackColor = true;
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
             // txtApellido2
             // 
             this.txtApellido2.Location = new System.Drawing.Point(114, 86);
             this.txtApellido2.Name = "txtApellido2";
             this.txtApellido2.Size = new System.Drawing.Size(122, 20);
-            this.txtApellido2.TabIndex = 10;
+            this.txtApellido2.TabIndex = 3;
             // 
             // txtApellido1
             // 
             this.txtApellido1.Location = new System.Drawing.Point(342, 57);
             this.txtApellido1.Name = "txtApellido1";
             this.txtApellido1.Size = new System.Drawing.Size(122, 20);
-            this.txtApellido1.TabIndex = 11;
+            this.txtApellido1.TabIndex = 2;
             // 
             // label4
             // 
@@ -155,7 +159,7 @@
             this.txtNombre.Location = new System.Drawing.Point(114, 57);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(122, 20);
-            this.txtNombre.TabIndex = 12;
+            this.txtNombre.TabIndex = 1;
             // 
             // label5
             // 
@@ -171,7 +175,7 @@
             this.txtTelefono.Location = new System.Drawing.Point(342, 83);
             this.txtTelefono.Name = "txtTelefono";
             this.txtTelefono.Size = new System.Drawing.Size(122, 20);
-            this.txtTelefono.TabIndex = 9;
+            this.txtTelefono.TabIndex = 4;
             // 
             // label3
             // 
@@ -192,12 +196,12 @@
             this.label1.TabIndex = 2;
             this.label1.Text = "ID CLIENTE";
             // 
-            // txtEmpleadoId
+            // txtClienteId
             // 
-            this.txtEmpleadoId.Location = new System.Drawing.Point(114, 25);
-            this.txtEmpleadoId.Name = "txtEmpleadoId";
-            this.txtEmpleadoId.Size = new System.Drawing.Size(122, 20);
-            this.txtEmpleadoId.TabIndex = 8;
+            this.txtClienteId.Location = new System.Drawing.Point(114, 25);
+            this.txtClienteId.Name = "txtClienteId";
+            this.txtClienteId.Size = new System.Drawing.Size(122, 20);
+            this.txtClienteId.TabIndex = 0;
             // 
             // label2
             // 
@@ -242,7 +246,7 @@
         private System.Windows.Forms.TextBox txtTelefono;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txtEmpleadoId;
+        private System.Windows.Forms.TextBox txtClienteId;
         private System.Windows.Forms.Label label2;
     }
 }

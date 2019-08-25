@@ -40,6 +40,8 @@
             this.txtApellido1 = new System.Windows.Forms.TextBox();
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtSucursal = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
             this.btnResetear = new System.Windows.Forms.Button();
             this.txtSalario = new System.Windows.Forms.TextBox();
             this.btnActualizar = new System.Windows.Forms.Button();
@@ -62,10 +64,11 @@
             this.dgvEmpleados.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dgvEmpleados.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical;
             this.dgvEmpleados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvEmpleados.Location = new System.Drawing.Point(12, 201);
+            this.dgvEmpleados.Location = new System.Drawing.Point(0, 201);
             this.dgvEmpleados.Name = "dgvEmpleados";
+            this.dgvEmpleados.RowHeadersVisible = false;
             this.dgvEmpleados.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvEmpleados.Size = new System.Drawing.Size(763, 283);
+            this.dgvEmpleados.Size = new System.Drawing.Size(868, 283);
             this.dgvEmpleados.TabIndex = 1;
             this.dgvEmpleados.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvEmpleados_CellClick_1);
             this.dgvEmpleados.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvEmpleados_CellContentClick);
@@ -92,7 +95,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(253, 60);
+            this.label3.Location = new System.Drawing.Point(6, 92);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(83, 13);
             this.label3.TabIndex = 4;
@@ -101,7 +104,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(6, 89);
+            this.label4.Location = new System.Drawing.Point(6, 128);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(84, 13);
             this.label4.TabIndex = 5;
@@ -110,50 +113,51 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(253, 25);
+            this.label5.Location = new System.Drawing.Point(253, 28);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(64, 13);
             this.label5.TabIndex = 6;
             this.label5.Text = "TELEFONO";
-            this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // txtEmpleadoId
             // 
             this.txtEmpleadoId.Location = new System.Drawing.Point(114, 25);
             this.txtEmpleadoId.Name = "txtEmpleadoId";
             this.txtEmpleadoId.Size = new System.Drawing.Size(122, 20);
-            this.txtEmpleadoId.TabIndex = 8;
+            this.txtEmpleadoId.TabIndex = 0;
             // 
             // txtTelefono
             // 
-            this.txtTelefono.Location = new System.Drawing.Point(342, 19);
+            this.txtTelefono.Location = new System.Drawing.Point(342, 25);
             this.txtTelefono.Name = "txtTelefono";
             this.txtTelefono.Size = new System.Drawing.Size(122, 20);
-            this.txtTelefono.TabIndex = 9;
+            this.txtTelefono.TabIndex = 4;
             // 
             // txtApellido2
             // 
-            this.txtApellido2.Location = new System.Drawing.Point(114, 86);
+            this.txtApellido2.Location = new System.Drawing.Point(114, 125);
             this.txtApellido2.Name = "txtApellido2";
             this.txtApellido2.Size = new System.Drawing.Size(122, 20);
-            this.txtApellido2.TabIndex = 10;
+            this.txtApellido2.TabIndex = 3;
             // 
             // txtApellido1
             // 
-            this.txtApellido1.Location = new System.Drawing.Point(342, 57);
+            this.txtApellido1.Location = new System.Drawing.Point(114, 89);
             this.txtApellido1.Name = "txtApellido1";
             this.txtApellido1.Size = new System.Drawing.Size(122, 20);
-            this.txtApellido1.TabIndex = 11;
+            this.txtApellido1.TabIndex = 2;
             // 
             // txtNombre
             // 
             this.txtNombre.Location = new System.Drawing.Point(114, 57);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(122, 20);
-            this.txtNombre.TabIndex = 12;
+            this.txtNombre.TabIndex = 1;
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.txtSucursal);
+            this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Controls.Add(this.btnResetear);
             this.groupBox1.Controls.Add(this.txtSalario);
             this.groupBox1.Controls.Add(this.btnActualizar);
@@ -179,21 +183,38 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Informacion del Empleado";
             // 
+            // txtSucursal
+            // 
+            this.txtSucursal.Location = new System.Drawing.Point(342, 92);
+            this.txtSucursal.Name = "txtSucursal";
+            this.txtSucursal.Size = new System.Drawing.Size(122, 20);
+            this.txtSucursal.TabIndex = 6;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(253, 96);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(65, 13);
+            this.label8.TabIndex = 21;
+            this.label8.Text = "SUCURSAL";
+            // 
             // btnResetear
             // 
             this.btnResetear.Location = new System.Drawing.Point(481, 125);
             this.btnResetear.Name = "btnResetear";
             this.btnResetear.Size = new System.Drawing.Size(75, 23);
-            this.btnResetear.TabIndex = 18;
+            this.btnResetear.TabIndex = 11;
             this.btnResetear.Text = "Resetear";
             this.btnResetear.UseVisualStyleBackColor = true;
+            this.btnResetear.Click += new System.EventHandler(this.btnResetear_Click_1);
             // 
             // txtSalario
             // 
-            this.txtSalario.Location = new System.Drawing.Point(342, 97);
+            this.txtSalario.Location = new System.Drawing.Point(342, 61);
             this.txtSalario.Name = "txtSalario";
             this.txtSalario.Size = new System.Drawing.Size(122, 20);
-            this.txtSalario.TabIndex = 20;
+            this.txtSalario.TabIndex = 5;
             // 
             // btnActualizar
             // 
@@ -201,16 +222,17 @@
             this.btnActualizar.Location = new System.Drawing.Point(481, 89);
             this.btnActualizar.Name = "btnActualizar";
             this.btnActualizar.Size = new System.Drawing.Size(75, 23);
-            this.btnActualizar.TabIndex = 17;
+            this.btnActualizar.TabIndex = 10;
             this.btnActualizar.Text = "Actualizar";
             this.btnActualizar.UseVisualStyleBackColor = true;
+            this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click_1);
             // 
             // txtDireccion
             // 
-            this.txtDireccion.Location = new System.Drawing.Point(114, 128);
+            this.txtDireccion.Location = new System.Drawing.Point(114, 154);
             this.txtDireccion.Name = "txtDireccion";
             this.txtDireccion.Size = new System.Drawing.Size(304, 20);
-            this.txtDireccion.TabIndex = 20;
+            this.txtDireccion.TabIndex = 7;
             // 
             // btnEliminar
             // 
@@ -218,14 +240,15 @@
             this.btnEliminar.Location = new System.Drawing.Point(481, 54);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(75, 23);
-            this.btnEliminar.TabIndex = 16;
+            this.btnEliminar.TabIndex = 9;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click_1);
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(253, 97);
+            this.label6.Location = new System.Drawing.Point(253, 61);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(53, 13);
             this.label6.TabIndex = 19;
@@ -236,14 +259,15 @@
             this.btnAgregar.Location = new System.Drawing.Point(481, 15);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(75, 23);
-            this.btnAgregar.TabIndex = 15;
+            this.btnAgregar.TabIndex = 8;
             this.btnAgregar.Text = "Agregar";
             this.btnAgregar.UseVisualStyleBackColor = true;
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click_1);
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(6, 130);
+            this.label7.Location = new System.Drawing.Point(6, 156);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(66, 13);
             this.label7.TabIndex = 19;
@@ -288,6 +312,8 @@
         private System.Windows.Forms.TextBox txtDireccion;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TextBox txtSucursal;
+        private System.Windows.Forms.Label label8;
     }
 }
 

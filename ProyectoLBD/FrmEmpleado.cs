@@ -33,43 +33,26 @@ namespace ProyectoLBD
             con.ConnectionString = conString;
             con.Open();
 
-            string sql = "SELECT EM_IDEMPLEADO,EM_NOMBRE,EM_APELLIDO1,EM_APELLIDO2,EM_TELEFONO,EM_DIRECCION,EM_SALARIO FROM EMPLEADO ";
-            OracleCommand cmd = new OracleCommand(sql, con);
-            using (OracleDataReader reader = cmd.ExecuteReader())
-            {
-                DataTable dataTable = new DataTable();
-                dataTable.Load(reader);
-                dgvEmpleados.DataSource = dataTable;
-            }
+            OracleCommand comando = new OracleCommand("OBT_EMPLEADOS", con);
+            comando.CommandType = System.Data.CommandType.StoredProcedure;
+
+            comando.Parameters.Add("REGISTROS", OracleDbType.RefCursor).Direction = ParameterDirection.Output;
+
+
+
+            OracleDataAdapter adaptador = new OracleDataAdapter();
+            adaptador.SelectCommand = comando;
+
+            DataTable tabla = new DataTable();
+            adaptador.Fill(tabla);
+            dgvEmpleados.DataSource = tabla;
+
+            con.Close();
         }
 
         private void dgvEmpleados_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            try
-            {
-                if (e.RowIndex >= 0)
-                {
-                    DataGridViewRow row = this.dgvEmpleados.Rows[e.RowIndex];
-                    txtEmpleadoId.Text = row.Cells["EM_IDEMPLEADO"].Value.ToString();
-                    txtNombre.Text = row.Cells["EM_NOMBRE"].Value.ToString();
-                    txtApellido1.Text = row.Cells["EM_APELLIDO1"].Value.ToString();
-                    txtApellido2.Text = row.Cells["EM_APELLIDO2"].Value.ToString();
-                    txtTelefono.Text = row.Cells["EM_TELEFONO"].Value.ToString();
-                    txtSalario.Text = row.Cells["EM_SALARIO"].Value.ToString();
-                    txtDireccion.Text = row.Cells["EM_DIRECCION"].Value.ToString();
-                    //dTPFecha.Value = DateTime.Parse(row.Cells["HIRE_DATE"].Value.ToString());
-
-                    btnAgregar.Enabled = false;
-                    btnActualizar.Enabled = true;
-                    btnEliminar.Enabled = true;
-                }
-            }
-            catch (Exception ex)
-            {
-
-                MessageBox.Show("" + ex);
-            }
-
+            
 
         }
 
@@ -80,89 +63,27 @@ namespace ProyectoLBD
 
 
 
-        private void AUD(String sql_stmt, int state)
-        {
-            String msg = "";
-            OracleConnection con = new OracleConnection();
-            con.ConnectionString = conString;
-            con.Open();
-            OracleCommand cmd = con.CreateCommand();
-            cmd.CommandText = sql_stmt;
-            cmd.CommandType = CommandType.Text;
+       
+                
 
-            switch (state)
-            {
-                case 0:
-                    msg = "Fila insertada exitosamente";
-                    cmd.Parameters.Add("EMPLOYEE_ID", OracleDbType.Int32, 6).Value = txtEmpleadoId.Text;
-                    cmd.Parameters.Add("FIRST_NAME", OracleDbType.Varchar2, 25).Value = txtNombre.Text;
-                    cmd.Parameters.Add("LAST_NAME", OracleDbType.Varchar2, 25).Value = txtApellido1.Text;
-                    cmd.Parameters.Add("JOB_ID", OracleDbType.Varchar2, 25).Value = txtApellido2.Text;
-                    cmd.Parameters.Add("SALARY", OracleDbType.Int32, 25).Value = txtTelefono.Text;
-                   // cmd.Parameters.Add("HIRE_DATE", OracleDbType.Date, 7).Value = dTPFecha.Value;
-                    break;
-
-                case 1:
-                    msg = "Fila actualizada exitosamente";
-
-                    cmd.Parameters.Add("FIRST_NAME", OracleDbType.Varchar2, 25).Value = txtNombre.Text;
-                    cmd.Parameters.Add("LAST_NAME", OracleDbType.Varchar2, 25).Value = txtApellido1.Text;
-                    cmd.Parameters.Add("SALARY", OracleDbType.Int32, 25).Value = txtTelefono.Text;
-                    //cmd.Parameters.Add("HIRE_DATE", OracleDbType.Date, 7).Value = dTPFecha.Value;
-                    cmd.Parameters.Add("EMPLOYEE_ID", OracleDbType.Int32, 6).Value = txtEmpleadoId.Text;
-
-
-
-                    break;
-
-                case 2:
-                    msg = "Fila borrada exitosamente";
-
-                    cmd.Parameters.Add("EMPLOYEE_ID", OracleDbType.Int32, 6).Value = txtEmpleadoId.Text;
-                    break;
-            }
-            try
-            {
-                int n = cmd.ExecuteNonQuery();
-                if (n > 0)
-                {
-                    MessageBox.Show(msg);
-                    this.updateDataGridEmpleados();
-                }
-            }
-            catch (Exception ex)
-            {
-
-                MessageBox.Show("" + ex);
-                //}
-                con.Close();
-            }
-        }
-
-        private void btnAgregar_Click(object sender, EventArgs e)
-        {
-            string sql = "INSERT INTO EMPLOYEES(EMPLOYEE_ID,FIRST_NAME,LAST_NAME,JOB_ID,SALARY,HIRE_DATE)" +
-                "VALUES(:EMPLOYEE_ID,:FIRST_NAME,:LAST_NAME,:JOB_ID,:HIRE_DATE)";
-            this.AUD(sql, 0);
-            btnAgregar.Enabled = false;
-            btnActualizar.Enabled = true;
-            btnEliminar.Enabled = true;
-        }
 
        
-        private void dgvEmpleados_CellClick(object sender, DataGridViewCellEventArgs e)
+
+        private void dgvEmpleados_CellClick_1(object sender, DataGridViewCellEventArgs e)
         {
             try
             {
                 if (e.RowIndex >= 0)
                 {
                     DataGridViewRow row = this.dgvEmpleados.Rows[e.RowIndex];
-                    txtEmpleadoId.Text = row.Cells["EM_IDEMPLEADO"].Value.ToString();
-                    txtNombre.Text = row.Cells["EM_NOMBRE"].Value.ToString();
-                    txtApellido1.Text = row.Cells["EM_APELLIDO1"].Value.ToString();
-                    txtApellido2.Text = row.Cells["EM_APELLIDO2"].Value.ToString();
-                    txtTelefono.Text = row.Cells["EM_TELEFONO"].Value.ToString();
-                    //dTPFecha.Value = DateTime.Parse(row.Cells["HIRE_DATE"].Value.ToString());
+                    txtEmpleadoId.Text = row.Cells["IDE"].Value.ToString();
+                    txtNombre.Text = row.Cells["NOMBRE"].Value.ToString();
+                    txtApellido1.Text = row.Cells["APELLIDO1"].Value.ToString();
+                    txtApellido2.Text = row.Cells["APELLIDO2"].Value.ToString();
+                    txtTelefono.Text = row.Cells["TELEFONO"].Value.ToString();
+                    txtSalario.Text = row.Cells["SALARIO"].Value.ToString();
+                    txtDireccion.Text = row.Cells["DIRECCION"].Value.ToString();
+                    txtSucursal.Text = row.Cells["SUCURSAL"].Value.ToString();
 
                     btnAgregar.Enabled = false;
                     btnActualizar.Enabled = true;
@@ -174,51 +95,105 @@ namespace ProyectoLBD
 
                 MessageBox.Show("" + ex);
             }
+
         }
 
-        private void btnActualizar_Click(object sender, EventArgs e)
-        {
-            String sql = "Update HR.EMPLOYEES SET FIRST_NAME = :FIRST_NAME," +
-                "LAST_NAME = :LAST_NAME,SALARY=:SALARY" +
-                "WHERE EMPLOYEE_ID = :EMPLOYEE_ID";
-            this.AUD(sql, 1);
-        }
-
-        private void btnEliminar_Click(object sender, EventArgs e)
-        {
-            string sql = "DELETE FROM EMPLOYEES "+
-                "WHERE EMPLOYEE_ID = :EMPLOYEE_ID";
-            this.AUD(sql, 2);
-            this.resetALL();
-        }
-
-        private void resetALL()
+        private void btnResetear_Click_1(object sender, EventArgs e)
         {
             txtEmpleadoId.Text = "";
             txtNombre.Text = "";
             txtApellido1.Text = "";
             txtApellido2.Text = "";
             txtTelefono.Text = "";
-           // dTPFecha = null;
+            txtDireccion.Text = "";
+            txtSalario.Text = "";
+            txtSucursal.Text = "";
 
             btnAgregar.Enabled = true;
-            btnActualizar.Enabled = false;
             btnEliminar.Enabled = false;
+            btnActualizar.Enabled = false;
         }
 
-        private void btnResetear_Click(object sender, EventArgs e)
+        private void btnEliminar_Click_1(object sender, EventArgs e)
         {
-            this.resetALL();
+            OracleConnection con = new OracleConnection();
+            con.ConnectionString = conString;
+
+            try
+            {
+                con.Open();
+                OracleCommand comando = new OracleCommand("borrar_empleado", con);
+                comando.CommandType = System.Data.CommandType.StoredProcedure;
+                comando.Parameters.Add("idEmpleado", OracleDbType.Int16).Value = txtEmpleadoId.Text;
+                comando.ExecuteNonQuery();
+                MessageBox.Show("Empleado eliminado", "Eliminar");
+                updateDataGridEmpleados();
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show("" + ex);
+            }
         }
 
-        private void label5_Click(object sender, EventArgs e)
+        private void btnAgregar_Click_1(object sender, EventArgs e)
         {
+            OracleConnection con = new OracleConnection();
+            con.ConnectionString = conString;
 
+
+            try
+            {
+                con.Open();
+                OracleCommand comando = new OracleCommand("agregar_empleado", con);
+                comando.CommandType = System.Data.CommandType.StoredProcedure;
+                comando.Parameters.Add("idEmp", OracleDbType.Int16).Value = txtEmpleadoId.Text;
+                comando.Parameters.Add("nombre", OracleDbType.Varchar2).Value = txtNombre.Text;
+                comando.Parameters.Add("ap1", OracleDbType.Varchar2).Value = txtApellido1.Text;
+                comando.Parameters.Add("ap2", OracleDbType.Varchar2).Value = txtApellido2.Text;
+                comando.Parameters.Add("tel", OracleDbType.Int16).Value = txtTelefono.Text;
+                comando.Parameters.Add("dir", OracleDbType.Varchar2).Value = txtDireccion.Text;
+                comando.Parameters.Add("sal", OracleDbType.Varchar2).Value = txtSalario.Text;
+                comando.Parameters.Add("suc", OracleDbType.Int16).Value = txtSucursal.Text;
+                comando.ExecuteNonQuery();
+                MessageBox.Show("Empleado agregado exitosamente", "Agregar");
+                updateDataGridEmpleados();
+            }
+            catch (Exception)
+            {
+
+                MessageBox.Show("Algo fallo", "Error");
+            }
+            con.Close();
         }
 
-        private void dgvEmpleados_CellClick_1(object sender, DataGridViewCellEventArgs e)
+        private void btnActualizar_Click_1(object sender, EventArgs e)
         {
+            OracleConnection con = new OracleConnection();
+            con.ConnectionString = conString;
+            try
+            {
+                con.Open();
+                OracleCommand comando = new OracleCommand("actualizar_empleado", con);
+                comando.CommandType = System.Data.CommandType.StoredProcedure;
+                comando.Parameters.Add("idEmp", OracleDbType.Int16).Value = txtEmpleadoId.Text;
+                comando.Parameters.Add("nombre", OracleDbType.Varchar2).Value = txtNombre.Text;
+                comando.Parameters.Add("ap1", OracleDbType.Varchar2).Value = txtApellido1.Text;
+                comando.Parameters.Add("ap2", OracleDbType.Varchar2).Value = txtApellido2.Text;
+                comando.Parameters.Add("tel", OracleDbType.Int16).Value = txtTelefono.Text;
+                comando.Parameters.Add("dir", OracleDbType.Varchar2).Value = txtDireccion.Text;
+                comando.Parameters.Add("sal", OracleDbType.Int16).Value = txtSalario.Text;
+                comando.ExecuteNonQuery();
+                MessageBox.Show("Empleado actualizado", "Actualizar");
+                updateDataGridEmpleados();
+            }
+            catch (Exception)
+            {
 
+                MessageBox.Show("Algo fallo", "Error");
+            }
+            con.Close();
         }
     }
-}
+    }
+
