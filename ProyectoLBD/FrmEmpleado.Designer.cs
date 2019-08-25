@@ -40,14 +40,14 @@
             this.txtApellido1 = new System.Windows.Forms.TextBox();
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.btnAgregar = new System.Windows.Forms.Button();
-            this.btnEliminar = new System.Windows.Forms.Button();
-            this.btnActualizar = new System.Windows.Forms.Button();
             this.btnResetear = new System.Windows.Forms.Button();
-            this.txtDireccion = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
             this.txtSalario = new System.Windows.Forms.TextBox();
+            this.btnActualizar = new System.Windows.Forms.Button();
+            this.txtDireccion = new System.Windows.Forms.TextBox();
+            this.btnEliminar = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
+            this.btnAgregar = new System.Windows.Forms.Button();
+            this.label7 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEmpleados)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -67,6 +67,7 @@
             this.dgvEmpleados.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvEmpleados.Size = new System.Drawing.Size(763, 283);
             this.dgvEmpleados.TabIndex = 1;
+            this.dgvEmpleados.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvEmpleados_CellClick_1);
             this.dgvEmpleados.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvEmpleados_CellContentClick);
             // 
             // label1
@@ -178,24 +179,21 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Informacion del Empleado";
             // 
-            // btnAgregar
+            // btnResetear
             // 
-            this.btnAgregar.Location = new System.Drawing.Point(481, 15);
-            this.btnAgregar.Name = "btnAgregar";
-            this.btnAgregar.Size = new System.Drawing.Size(75, 23);
-            this.btnAgregar.TabIndex = 15;
-            this.btnAgregar.Text = "Agregar";
-            this.btnAgregar.UseVisualStyleBackColor = true;
+            this.btnResetear.Location = new System.Drawing.Point(481, 125);
+            this.btnResetear.Name = "btnResetear";
+            this.btnResetear.Size = new System.Drawing.Size(75, 23);
+            this.btnResetear.TabIndex = 18;
+            this.btnResetear.Text = "Resetear";
+            this.btnResetear.UseVisualStyleBackColor = true;
             // 
-            // btnEliminar
+            // txtSalario
             // 
-            this.btnEliminar.Enabled = false;
-            this.btnEliminar.Location = new System.Drawing.Point(481, 54);
-            this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(75, 23);
-            this.btnEliminar.TabIndex = 16;
-            this.btnEliminar.Text = "Eliminar";
-            this.btnEliminar.UseVisualStyleBackColor = true;
+            this.txtSalario.Location = new System.Drawing.Point(342, 97);
+            this.txtSalario.Name = "txtSalario";
+            this.txtSalario.Size = new System.Drawing.Size(122, 20);
+            this.txtSalario.TabIndex = 20;
             // 
             // btnActualizar
             // 
@@ -207,15 +205,6 @@
             this.btnActualizar.Text = "Actualizar";
             this.btnActualizar.UseVisualStyleBackColor = true;
             // 
-            // btnResetear
-            // 
-            this.btnResetear.Location = new System.Drawing.Point(481, 125);
-            this.btnResetear.Name = "btnResetear";
-            this.btnResetear.Size = new System.Drawing.Size(75, 23);
-            this.btnResetear.TabIndex = 18;
-            this.btnResetear.Text = "Resetear";
-            this.btnResetear.UseVisualStyleBackColor = true;
-            // 
             // txtDireccion
             // 
             this.txtDireccion.Location = new System.Drawing.Point(114, 128);
@@ -223,21 +212,15 @@
             this.txtDireccion.Size = new System.Drawing.Size(304, 20);
             this.txtDireccion.TabIndex = 20;
             // 
-            // label7
+            // btnEliminar
             // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(6, 130);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(66, 13);
-            this.label7.TabIndex = 19;
-            this.label7.Text = "DIRECCION";
-            // 
-            // txtSalario
-            // 
-            this.txtSalario.Location = new System.Drawing.Point(342, 97);
-            this.txtSalario.Name = "txtSalario";
-            this.txtSalario.Size = new System.Drawing.Size(122, 20);
-            this.txtSalario.TabIndex = 20;
+            this.btnEliminar.Enabled = false;
+            this.btnEliminar.Location = new System.Drawing.Point(481, 54);
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Size = new System.Drawing.Size(75, 23);
+            this.btnEliminar.TabIndex = 16;
+            this.btnEliminar.Text = "Eliminar";
+            this.btnEliminar.UseVisualStyleBackColor = true;
             // 
             // label6
             // 
@@ -247,6 +230,24 @@
             this.label6.Size = new System.Drawing.Size(53, 13);
             this.label6.TabIndex = 19;
             this.label6.Text = "SALARIO";
+            // 
+            // btnAgregar
+            // 
+            this.btnAgregar.Location = new System.Drawing.Point(481, 15);
+            this.btnAgregar.Name = "btnAgregar";
+            this.btnAgregar.Size = new System.Drawing.Size(75, 23);
+            this.btnAgregar.TabIndex = 15;
+            this.btnAgregar.Text = "Agregar";
+            this.btnAgregar.UseVisualStyleBackColor = true;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(6, 130);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(66, 13);
+            this.label7.TabIndex = 19;
+            this.label7.Text = "DIRECCION";
             // 
             // FrmEmpleado
             // 

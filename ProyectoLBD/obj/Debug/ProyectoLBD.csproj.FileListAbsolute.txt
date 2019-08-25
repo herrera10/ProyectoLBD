@@ -3,7 +3,6 @@ C:\Users\randa\source\repos\ProyectoLBD\ProyectoLBD\bin\Debug\ProyectoLBD.exe
 C:\Users\randa\source\repos\ProyectoLBD\ProyectoLBD\bin\Debug\ProyectoLBD.pdb
 C:\Users\randa\source\repos\ProyectoLBD\ProyectoLBD\bin\Debug\Oracle.ManagedDataAccess.dll
 C:\Users\randa\source\repos\ProyectoLBD\ProyectoLBD\obj\Debug\ProyectoLBD.csprojAssemblyReference.cache
-C:\Users\randa\source\repos\ProyectoLBD\ProyectoLBD\obj\Debug\ProyectoLBD.Form1.resources
 C:\Users\randa\source\repos\ProyectoLBD\ProyectoLBD\obj\Debug\ProyectoLBD.Properties.Resources.resources
 C:\Users\randa\source\repos\ProyectoLBD\ProyectoLBD\obj\Debug\ProyectoLBD.csproj.GenerateResource.cache
 C:\Users\randa\source\repos\ProyectoLBD\ProyectoLBD\obj\Debug\ProyectoLBD.csproj.CoreCompileInputs.cache
@@ -25,3 +24,8 @@ C:\Users\Admin\Documents\GitHub\ProyectoLBD2\ProyectoLBD\obj\Debug\ProyectoLBD.F
 C:\Users\Admin\Documents\GitHub\ProyectoLBD2\ProyectoLBD\obj\Debug\ProyectoLBD.FrmMenu.resources
 C:\Users\Admin\Documents\GitHub\ProyectoLBD2\ProyectoLBD\obj\Debug\ProyectoLBD.FrmMenuPrincipal.resources
 C:\Users\Admin\Documents\GitHub\ProyectoLBD2\ProyectoLBD\obj\Debug\ProyectoLBD.FrmPelicula.resources
+C:\Users\randa\source\repos\ProyectoLBD\ProyectoLBD\obj\Debug\ProyectoLBD.FrmEmpleado.resources
+C:\Users\randa\source\repos\ProyectoLBD\ProyectoLBD\obj\Debug\ProyectoLBD.FrmMenu.resources
+C:\Users\randa\source\repos\ProyectoLBD\ProyectoLBD\obj\Debug\ProyectoLBD.FrmMenuPrincipal.resources
+C:\Users\randa\source\repos\ProyectoLBD\ProyectoLBD\obj\Debug\ProyectoLBD.FrmPelicula.resources
+C:\Users\randa\source\repos\ProyectoLBD\ProyectoLBD\obj\Debug\ProyectoLBD.FrmClientes.resources
