@@ -130,6 +130,18 @@
     <EmbeddedResource Include="FrmPelicula.resx">
       <DependentUpon>FrmPelicula.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmProyeccion.resx">
+      <DependentUpon>FrmProyeccion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmReserva.resx">
+      <DependentUpon>FrmReserva.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmSala.resx">
+      <DependentUpon>FrmSala.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmSucursal.resx">
+      <DependentUpon>FrmSucursal.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>

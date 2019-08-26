@@ -149,5 +149,27 @@ namespace ProyectoLBD
             }
             con.Close();
         }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            OracleConnection con = new OracleConnection();
+            con.ConnectionString = conString;
+
+            try
+            {
+                con.Open();
+                OracleCommand comando = new OracleCommand("borrar_pelicula", con);
+                comando.CommandType = System.Data.CommandType.StoredProcedure;
+                comando.Parameters.Add("idPelicula", OracleDbType.Int16).Value = txtIdPelicula.Text;
+                comando.ExecuteNonQuery();
+                MessageBox.Show("Pelicula eliminada", "Eliminar");
+                updateDataGridPelicula();
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show("" + ex);
+            }
+        }
     }
 }

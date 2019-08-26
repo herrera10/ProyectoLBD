@@ -29,3 +29,7 @@ C:\Users\randa\source\repos\ProyectoLBD\ProyectoLBD\obj\Debug\ProyectoLBD.FrmMen
 C:\Users\randa\source\repos\ProyectoLBD\ProyectoLBD\obj\Debug\ProyectoLBD.FrmMenuPrincipal.resources
 C:\Users\randa\source\repos\ProyectoLBD\ProyectoLBD\obj\Debug\ProyectoLBD.FrmPelicula.resources
 C:\Users\randa\source\repos\ProyectoLBD\ProyectoLBD\obj\Debug\ProyectoLBD.FrmClientes.resources
+C:\Users\randa\source\repos\ProyectoLBD\ProyectoLBD\obj\Debug\ProyectoLBD.FrmSucursal.resources
+C:\Users\randa\source\repos\ProyectoLBD\ProyectoLBD\obj\Debug\ProyectoLBD.FrmProyeccion.resources
+C:\Users\randa\source\repos\ProyectoLBD\ProyectoLBD\obj\Debug\ProyectoLBD.FrmSala.resources
+C:\Users\randa\source\repos\ProyectoLBD\ProyectoLBD\obj\Debug\ProyectoLBD.FrmReserva.resources

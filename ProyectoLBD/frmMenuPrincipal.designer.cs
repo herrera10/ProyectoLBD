@@ -30,18 +30,17 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMenuPrincipal));
             this.menuVertical = new System.Windows.Forms.Panel();
-            this.btnSalir = new System.Windows.Forms.Button();
             this.pnlAdmin = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
+            this.btnSalir = new System.Windows.Forms.Button();
             this.btnUsuarios = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             this.btnActivos = new System.Windows.Forms.Button();
             this.btnAsignaciones = new System.Windows.Forms.Button();
-            this.btnProveedores = new System.Windows.Forms.Button();
             this.btnReportes = new System.Windows.Forms.Button();
             this.btnMisActivos = new System.Windows.Forms.Button();
-            this.btnReparaciones = new System.Windows.Forms.Button();
             this.btnMiPerfil = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btnProveedores = new System.Windows.Forms.Button();
             this.tituloPnl = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.lblFecha = new System.Windows.Forms.Label();
@@ -69,15 +68,27 @@
             this.menuVertical.Controls.Add(this.pnlAdmin);
             this.menuVertical.Controls.Add(this.btnReportes);
             this.menuVertical.Controls.Add(this.btnMisActivos);
-            this.menuVertical.Controls.Add(this.btnReparaciones);
             this.menuVertical.Controls.Add(this.btnMiPerfil);
             this.menuVertical.Controls.Add(this.pictureBox1);
+            this.menuVertical.Controls.Add(this.btnProveedores);
             this.menuVertical.Dock = System.Windows.Forms.DockStyle.Left;
             this.menuVertical.Location = new System.Drawing.Point(0, 0);
             this.menuVertical.Margin = new System.Windows.Forms.Padding(2);
             this.menuVertical.Name = "menuVertical";
             this.menuVertical.Size = new System.Drawing.Size(203, 570);
             this.menuVertical.TabIndex = 0;
+            // 
+            // pnlAdmin
+            // 
+            this.pnlAdmin.Controls.Add(this.btnSalir);
+            this.pnlAdmin.Controls.Add(this.btnUsuarios);
+            this.pnlAdmin.Controls.Add(this.label1);
+            this.pnlAdmin.Controls.Add(this.btnActivos);
+            this.pnlAdmin.Controls.Add(this.btnAsignaciones);
+            this.pnlAdmin.Location = new System.Drawing.Point(2, 251);
+            this.pnlAdmin.Name = "pnlAdmin";
+            this.pnlAdmin.Size = new System.Drawing.Size(194, 266);
+            this.pnlAdmin.TabIndex = 10;
             // 
             // btnSalir
             // 
@@ -88,7 +99,7 @@
             this.btnSalir.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSalir.ForeColor = System.Drawing.Color.White;
             this.btnSalir.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSalir.Location = new System.Drawing.Point(4, 227);
+            this.btnSalir.Location = new System.Drawing.Point(2, 173);
             this.btnSalir.Margin = new System.Windows.Forms.Padding(2);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(190, 37);
@@ -97,18 +108,22 @@
             this.btnSalir.UseVisualStyleBackColor = true;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
-            // pnlAdmin
+            // btnUsuarios
             // 
-            this.pnlAdmin.Controls.Add(this.btnSalir);
-            this.pnlAdmin.Controls.Add(this.label1);
-            this.pnlAdmin.Controls.Add(this.btnUsuarios);
-            this.pnlAdmin.Controls.Add(this.btnActivos);
-            this.pnlAdmin.Controls.Add(this.btnAsignaciones);
-            this.pnlAdmin.Controls.Add(this.btnProveedores);
-            this.pnlAdmin.Location = new System.Drawing.Point(2, 251);
-            this.pnlAdmin.Name = "pnlAdmin";
-            this.pnlAdmin.Size = new System.Drawing.Size(194, 266);
-            this.pnlAdmin.TabIndex = 10;
+            this.btnUsuarios.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnUsuarios.FlatAppearance.BorderSize = 0;
+            this.btnUsuarios.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnUsuarios.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUsuarios.ForeColor = System.Drawing.Color.White;
+            this.btnUsuarios.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnUsuarios.Location = new System.Drawing.Point(1, 30);
+            this.btnUsuarios.Margin = new System.Windows.Forms.Padding(2);
+            this.btnUsuarios.Name = "btnUsuarios";
+            this.btnUsuarios.Size = new System.Drawing.Size(190, 37);
+            this.btnUsuarios.TabIndex = 0;
+            this.btnUsuarios.Text = "PROYECCION";
+            this.btnUsuarios.UseVisualStyleBackColor = true;
+            this.btnUsuarios.Click += new System.EventHandler(this.btnUsuarios_Click);
             // 
             // label1
             // 
@@ -121,23 +136,6 @@
             this.label1.TabIndex = 5;
             this.label1.Text = "------------------";
             // 
-            // btnUsuarios
-            // 
-            this.btnUsuarios.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnUsuarios.FlatAppearance.BorderSize = 0;
-            this.btnUsuarios.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnUsuarios.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUsuarios.ForeColor = System.Drawing.Color.White;
-            this.btnUsuarios.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnUsuarios.Location = new System.Drawing.Point(3, 30);
-            this.btnUsuarios.Margin = new System.Windows.Forms.Padding(2);
-            this.btnUsuarios.Name = "btnUsuarios";
-            this.btnUsuarios.Size = new System.Drawing.Size(190, 37);
-            this.btnUsuarios.TabIndex = 0;
-            this.btnUsuarios.Text = "PROYECCION";
-            this.btnUsuarios.UseVisualStyleBackColor = true;
-            this.btnUsuarios.Click += new System.EventHandler(this.btnUsuarios_Click);
-            // 
             // btnActivos
             // 
             this.btnActivos.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -146,7 +144,7 @@
             this.btnActivos.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnActivos.ForeColor = System.Drawing.Color.White;
             this.btnActivos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnActivos.Location = new System.Drawing.Point(2, 71);
+            this.btnActivos.Location = new System.Drawing.Point(0, 132);
             this.btnActivos.Margin = new System.Windows.Forms.Padding(2);
             this.btnActivos.Name = "btnActivos";
             this.btnActivos.Size = new System.Drawing.Size(190, 37);
@@ -163,7 +161,7 @@
             this.btnAsignaciones.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAsignaciones.ForeColor = System.Drawing.Color.White;
             this.btnAsignaciones.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAsignaciones.Location = new System.Drawing.Point(0, 112);
+            this.btnAsignaciones.Location = new System.Drawing.Point(2, 84);
             this.btnAsignaciones.Margin = new System.Windows.Forms.Padding(2);
             this.btnAsignaciones.Name = "btnAsignaciones";
             this.btnAsignaciones.Size = new System.Drawing.Size(190, 37);
@@ -171,23 +169,6 @@
             this.btnAsignaciones.Text = "SALA";
             this.btnAsignaciones.UseVisualStyleBackColor = true;
             this.btnAsignaciones.Click += new System.EventHandler(this.btnAsignaciones_Click);
-            // 
-            // btnProveedores
-            // 
-            this.btnProveedores.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnProveedores.FlatAppearance.BorderSize = 0;
-            this.btnProveedores.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnProveedores.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnProveedores.ForeColor = System.Drawing.Color.White;
-            this.btnProveedores.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnProveedores.Location = new System.Drawing.Point(3, 153);
-            this.btnProveedores.Margin = new System.Windows.Forms.Padding(2);
-            this.btnProveedores.Name = "btnProveedores";
-            this.btnProveedores.Size = new System.Drawing.Size(190, 37);
-            this.btnProveedores.TabIndex = 4;
-            this.btnProveedores.Text = "SUCURSAL";
-            this.btnProveedores.UseVisualStyleBackColor = true;
-            this.btnProveedores.Click += new System.EventHandler(this.btnProveedores_Click);
             // 
             // btnReportes
             // 
@@ -197,7 +178,7 @@
             this.btnReportes.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnReportes.ForeColor = System.Drawing.Color.White;
             this.btnReportes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnReportes.Location = new System.Drawing.Point(1, 208);
+            this.btnReportes.Location = new System.Drawing.Point(13, 197);
             this.btnReportes.Margin = new System.Windows.Forms.Padding(2);
             this.btnReportes.Name = "btnReportes";
             this.btnReportes.Size = new System.Drawing.Size(190, 37);
@@ -222,23 +203,6 @@
             this.btnMisActivos.Text = "EMPLEADOS";
             this.btnMisActivos.UseVisualStyleBackColor = true;
             this.btnMisActivos.Click += new System.EventHandler(this.btnMisActivos_Click);
-            // 
-            // btnReparaciones
-            // 
-            this.btnReparaciones.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnReparaciones.FlatAppearance.BorderSize = 0;
-            this.btnReparaciones.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnReparaciones.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnReparaciones.ForeColor = System.Drawing.Color.White;
-            this.btnReparaciones.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnReparaciones.Location = new System.Drawing.Point(3, 162);
-            this.btnReparaciones.Margin = new System.Windows.Forms.Padding(2);
-            this.btnReparaciones.Name = "btnReparaciones";
-            this.btnReparaciones.Size = new System.Drawing.Size(190, 37);
-            this.btnReparaciones.TabIndex = 6;
-            this.btnReparaciones.Text = "FUNCION";
-            this.btnReparaciones.UseVisualStyleBackColor = true;
-            this.btnReparaciones.Click += new System.EventHandler(this.btnReparaciones_Click);
             // 
             // btnMiPerfil
             // 
@@ -266,6 +230,23 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
+            // 
+            // btnProveedores
+            // 
+            this.btnProveedores.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnProveedores.FlatAppearance.BorderSize = 0;
+            this.btnProveedores.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnProveedores.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnProveedores.ForeColor = System.Drawing.Color.White;
+            this.btnProveedores.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnProveedores.Location = new System.Drawing.Point(2, 156);
+            this.btnProveedores.Margin = new System.Windows.Forms.Padding(2);
+            this.btnProveedores.Name = "btnProveedores";
+            this.btnProveedores.Size = new System.Drawing.Size(190, 37);
+            this.btnProveedores.TabIndex = 4;
+            this.btnProveedores.Text = "SUCURSAL";
+            this.btnProveedores.UseVisualStyleBackColor = true;
+            this.btnProveedores.Click += new System.EventHandler(this.btnProveedores_Click);
             // 
             // tituloPnl
             // 
@@ -448,7 +429,6 @@
         private System.Windows.Forms.Button btnProveedores;
         private System.Windows.Forms.Button btnAsignaciones;
         private System.Windows.Forms.Button btnActivos;
-        private System.Windows.Forms.Button btnReparaciones;
         private System.Windows.Forms.Button btnMisActivos;
         private System.Windows.Forms.Button btnReportes;
         private System.Windows.Forms.Panel pnlAdmin;
